@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CartItem extends React.Component {
+const CartItem =(props)=> {
 
   // testing () {
   //   const promise = new Promise((resolve, reject) => {
@@ -20,7 +20,7 @@ class CartItem extends React.Component {
   //     console.log('state', this.state);
   //   });
   // }
-  increaseQuantity = () => {
+  // increaseQuantity = () => {
     // this.state.qty += 1;
     // console.log('this', this.state);
     // setState form 1
@@ -29,29 +29,28 @@ class CartItem extends React.Component {
     // }, () => {});
 
     // setState form 2 - if prevState required use this
-    this.setState((prevState) => {
-      return {
-        qty: prevState.qty + 1
-      }
-    });
-  }
+  //   this.setState((prevState) => {
+  //     return {
+  //       qty: prevState.qty + 1
+  //     }
+  //   });
+  // }
 
-  decreaseQuantity = () => {
-    const { qty } = this.state;
+  // decreaseQuantity = () => {
+  //   const { qty } = this.state;
 
-    if (qty === 0) {
-      return;
-    }
+  //   if (qty === 0) {
+  //     return;
+  //   }
     // setState form 2 - if prevState required use this
-    this.setState((prevState) => {
-      return {
-        qty: prevState.qty - 1
-      }
-    });
-  }
-    render () {
-        const{title,qty,price}=this.props.product;
-        const{product,onIncreaseQuantity,onDecreaseQuantity,onDeleteProduct}=this.props;
+  //   this.setState((prevState) => {
+  //     return {
+  //       qty: prevState.qty - 1
+  //     }
+  //   });
+  // }
+        const{title,qty,price}=props.product;
+        const{product,onIncreaseQuantity,onDecreaseQuantity,onDeleteProduct}=props;
       return (
         <div className="cart-item">
           <div className="left-block">
@@ -86,7 +85,7 @@ class CartItem extends React.Component {
         </div>
       );
     }
-  }
+  
   
   const styles = {
     image: {
